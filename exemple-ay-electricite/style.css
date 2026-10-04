@@ -1,0 +1,234 @@
+/* AY Electricite, SARL Galopoli : feuille de style mobile d'abord.
+   Objectif : 0 px de debordement sur un ecran de 375 px. */
+
+:root {
+  --bleu: #0b3d6b;
+  --bleu-clair: #12608f;
+  --orange: #e2680f;
+  --gris: #5a6672;
+  --fond: #f4f6f8;
+  --trait: #dfe4e9;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  color: #1d252d;
+  background: #fff;
+}
+
+.wrap {
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ---------- en tete ---------- */
+
+.site-head {
+  background: var(--bleu);
+  color: #fff;
+  padding: 14px 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .18);
+}
+
+.head-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.brand { min-width: 0; }
+
+.brand-name {
+  display: block;
+  font-size: 1.32rem;
+  font-weight: 700;
+  letter-spacing: .3px;
+}
+
+.brand-sub {
+  display: block;
+  font-size: .82rem;
+  color: #bcd7ea;
+  line-height: 1.35;
+}
+
+/* ---------- boutons ---------- */
+
+.btn {
+  display: inline-block;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  text-align: center;
+  border: 2px solid transparent;
+}
+
+.btn-call { background: var(--orange); color: #fff; white-space: nowrap; }
+
+.btn-primary { background: var(--orange); color: #fff; }
+
+.btn-ghost {
+  background: #fff;
+  color: var(--bleu);
+  border-color: var(--bleu);
+}
+
+/* ---------- bloc d'accueil ---------- */
+
+.hero {
+  background: linear-gradient(160deg, var(--bleu) 0%, var(--bleu-clair) 100%);
+  color: #fff;
+  padding: 44px 0 40px;
+}
+
+.eyebrow {
+  display: inline-block;
+  background: rgba(255, 255, 255, .16);
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: .84rem;
+  font-weight: 600;
+  margin: 0 0 14px;
+}
+
+h1 {
+  font-size: 1.85rem;
+  line-height: 1.22;
+  margin: 0 0 16px;
+  letter-spacing: -.4px;
+}
+
+.lead { font-size: 1.05rem; color: #dceaf4; margin: 0 0 24px; }
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.fixe { margin: 16px 0 0; font-size: .9rem; color: #bcd7ea; }
+
+/* ---------- sections ---------- */
+
+.block { padding: 42px 20px; }
+
+h2 {
+  font-size: 1.42rem;
+  margin: 0 0 8px;
+  color: var(--bleu);
+  letter-spacing: -.2px;
+}
+
+.block > p { color: var(--gris); }
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  margin-top: 22px;
+}
+
+.card {
+  background: var(--fond);
+  border: 1px solid var(--trait);
+  border-radius: 12px;
+  padding: 22px 20px;
+}
+
+.card h3 {
+  margin: 0 0 12px;
+  font-size: 1.12rem;
+  color: var(--bleu);
+}
+
+.card ul { margin: 0; padding-left: 20px; }
+
+.card li { margin-bottom: 7px; }
+
+.card-accent {
+  background: #fff7ed;
+  border-color: #f3d5b4;
+}
+
+/* ---------- engagements ---------- */
+
+.engagements {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.eng {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 16px 18px;
+  border-left: 4px solid var(--orange);
+  background: var(--fond);
+  border-radius: 0 10px 10px 0;
+}
+
+.eng-num {
+  font-weight: 700;
+  color: var(--orange);
+  font-size: 1.05rem;
+  flex-shrink: 0;
+}
+
+.eng p { margin: 0; font-size: .98rem; }
+
+/* ---------- contact ---------- */
+
+.contact-band {
+  background: var(--fond);
+  border-top: 1px solid var(--trait);
+}
+
+.contact-band .hero-actions { margin-top: 18px; }
+
+.mail { margin-top: 18px; font-size: .95rem; color: var(--gris); }
+
+.mail a { color: var(--bleu-clair); }
+
+/* ---------- pied ---------- */
+
+.site-foot {
+  background: #16202a;
+  color: #9fb0c0;
+  padding: 26px 0;
+  font-size: .88rem;
+}
+
+.site-foot p { margin: 0 0 7px; }
+
+.site-foot strong { color: #fff; }
+
+/* ---------- écrans larges ---------- */
+
+@media (min-width: 760px) {
+  h1 { font-size: 2.5rem; }
+  .grid { grid-template-columns: repeat(2, 1fr); }
+  .engagements { grid-template-columns: repeat(2, 1fr); }
+  .block { padding: 54px 20px; }
+}
